@@ -1,0 +1,41 @@
+{% extends 'webapp/base.html' %} {% block content %}
+
+<body>
+  <div class="container bg-light shadow-md p-5 form-layout">
+    <h3>Update record</h3>
+
+    <h6>Update your record down below.</h6>
+
+    <hr />
+    <br />
+
+    <form method="POST" autocomplete="off">
+      {% csrf_token %}
+      <br />
+      First Name: {{ form.first_name}}
+      <br />
+      Last Name: {{ form.last_name}}
+      <br />
+      Student ID: {{ form.student_id}}
+      <br />
+      Student Email: {{ form.student_email}}
+      <br />
+      Phone Number: {{ form.phone_number}}
+      <br />
+      Major: {{ form.major}}
+      <br />
+      <hr />
+      <button type="submit" class="btn btn-primary">
+        Update Record &nbsp;
+      </button>
+      &nbsp;
+      <a href="{% url 'dashboard' %}" class="btn btn-secondary">
+        Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </a>
+    </form>
+  </div>
+
+  <br />
+</body>
+
+{% endblock %}
