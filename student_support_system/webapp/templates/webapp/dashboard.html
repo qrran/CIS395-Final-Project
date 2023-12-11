@@ -17,6 +17,7 @@
       <th scope="col">Student Email</th>
       <th scope="col">Phone Number</th>
       <th scope="col">Major</th>
+      <th scope="col">GPA</th>
 
       <th scope="col">View</th>
     </tr>
@@ -32,6 +33,7 @@
       <td>{{record.student_email}}</td>
       <td>{{record.phone_number}}</td>
       <td>{{record.major}}</td>
+      <td>{{record.gpa}}</td>
 
       <td><a href="{% url 'viewRecord' record.id %}">view details</a></td>
     </tr>

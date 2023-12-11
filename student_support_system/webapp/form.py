@@ -12,7 +12,7 @@ class CreateRecordForm(forms.ModelForm):
     class Meta:
 
         model = Record
-        fields = ['first_name', 'last_name', 'student_id', 'student_email', 'phone_number', 'major']
+        fields = ['first_name', 'last_name', 'student_id', 'student_email', 'phone_number', 'major', 'gpa']
     
 # same logic as update, based on the same field accordingly, and from the same model which is Record (the table created in model.py)
 # - Update a record
@@ -22,7 +22,7 @@ class UpdateRecordForm(forms.ModelForm):
     class Meta:
 
         model = Record
-        fields = ['first_name', 'last_name', 'student_id', 'student_email', 'phone_number', 'major']
+        fields = ['first_name', 'last_name', 'student_id', 'student_email', 'phone_number', 'major', 'gpa']
 
 
     
