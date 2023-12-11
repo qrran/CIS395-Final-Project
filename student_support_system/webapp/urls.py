@@ -20,8 +20,10 @@ urlpatterns = [
 
     path('ceTable', views.ceTable, name="ceTable"),
     path('createCE', views.createCERecord, name="createCE"),
-    path('updateCE', views.updateCERecord, name='updateCE'),
+    # path('updateCE', views.updateCERecord, name='updateCE'),
     path('deleteCE', views.deleteCERecord, name="deleteCE"),
+    path('viewdetail', views.viewdetail, name="viewdetail"),
+
 
 ]
 

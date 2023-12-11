@@ -1,0 +1,21 @@
+{% extends 'webapp/base.html' %} {% block content %}
+<div>
+  {% if community_engagements %} {% for record2 in community_engagements %}
+
+  <br />
+  Student: {{ record2.student }}
+  <br />
+  Current Experience: {{ record2.participation }}
+  <br />
+  Organization Name: {{ record2.organization_name }}
+  <br />
+  Activity Name: {{ record2.activity_name }}
+  <br />
+  Role: {{ record2.role }}
+  <br />
+  {% endfor %} {% endif %} &nbsp;
+  <a href="{% url 'ceTable' %}" class="btn btn-secondary">
+    Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </a>
+</div>
+{% endblock %}

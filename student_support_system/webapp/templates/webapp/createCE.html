@@ -6,9 +6,7 @@
   <form method="POST" autocomplete="off">
     {% csrf_token %}
     <br />
-    Student: {{form2.student}}
-    <br />
-    Participation: {{ form2.participation }}
+    Current Experienc {{ form2.participation }}
     <br />
     Organization Name: {{ form2.organization_name }}
     <br />
@@ -17,7 +15,7 @@
     Role: {{ form2.role }}
     <br />
     <button type="submit" class="btn btn-primary">
-      Create Record &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
+      Submit Change &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
     </button>
     &nbsp;
     <a href="{% url 'dashboard' %}" class="btn btn-secondary">

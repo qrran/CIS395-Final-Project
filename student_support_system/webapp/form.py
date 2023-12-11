@@ -25,14 +25,13 @@ class CreateCommunityEngagementForm(forms.ModelForm):
 # - Update a record
 
 class UpdateRecordForm(forms.ModelForm):
-
     class Meta:
 
         model = Record
         fields = ['first_name', 'last_name', 'student_id', 'student_email', 'phone_number', 'major', 'gpa']
 
 class UpdateCommunityEngagementForm(forms.ModelForm):
-
+    student = forms.ModelChoiceField(queryset=Record.objects.all(), empty_label="Select a student")
     class Meta:
 
         model = CommunityEngagement

@@ -125,14 +125,17 @@ def updateCERecord(request, pk):
     context = {'form2': form2}
     return render(request, 'webapp/updateCE.html', context=context)
 
-# - Read / View a singular record
-# def viewRecord(request, pk):
-#     record2 = CommunityEngagement.objects.get(id=pk)
-#     context = {'record2': record2}
-#     return render(request, 'webapp/viewCE.html', context=context)
+def viewCE(request, pk):
+    record2 = CommunityEngagement.objects.get(id2=pk)
+    context = {'record2': record2}
+    return render(request, 'webapp/viewCE.html', context=context)
 
 # - Delete a record
 def deleteCERecord(request, pk):
     record2 = CommunityEngagement.objects.get(pk)
     record2.delete()
     return redirect("")
+
+def viewdetail(request):
+
+    return render(request, 'webapp/viewdetail.html')
