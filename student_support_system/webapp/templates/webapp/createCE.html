@@ -1,27 +1,20 @@
 {% extends 'webapp/base.html' %} {% block content %}
 <div class="container bg-light shadow-md p-5 form-layout">
-  <h1>Create new Record</h1>
-  <h2>Start adding in the required details for your record.</h2>
+  <h2>Create new Community Engagement Record</h2>
   <hr />
   <br />
   <form method="POST" autocomplete="off">
     {% csrf_token %}
     <br />
-    First Name: {{ form.first_name}}
+    Student: {{form2.student}}
     <br />
-
-    Last Name: {{ form.last_name}}
+    Participation: {{ form2.participation }}
     <br />
-
-    Student ID: {{ form.student_id}}
+    Organization Name: {{ form2.organization_name }}
     <br />
-    Student Email: {{ form.student_email}}
+    Activity Name: {{ form2.activity_name }}
     <br />
-    Phone Number: {{ form.phone_number}}
-    <br />
-    Major: {{ form.major}}
-    <br />
-    GPA: {{ form.gpa}}
+    Role: {{ form2.role }}
     <br />
     <button type="submit" class="btn btn-primary">
       Create Record &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
@@ -32,5 +25,4 @@
     </a>
   </form>
 </div>
-
 {% endblock %}

@@ -18,6 +18,11 @@ urlpatterns = [
 
     path('deleteRecord/<int:pk>', views.deleteRecord, name="deleteRecord"),
 
+    path('ceTable', views.ceTable, name="ceTable"),
+    path('createCE', views.createCERecord, name="createCE"),
+    path('updateCE', views.updateCERecord, name='updateCE'),
+    path('deleteCE', views.deleteCERecord, name="deleteCE"),
+
 ]
 
 

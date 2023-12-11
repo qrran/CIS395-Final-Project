@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
-from .form import CreateRecordForm, UpdateRecordForm
+from .form import CreateRecordForm, UpdateRecordForm, CreateCommunityEngagementForm, UpdateCommunityEngagementForm
 
-from .models import Record
+from .models import Record, CommunityEngagement
 
 
 
@@ -49,8 +49,6 @@ def createRecord(request):
 
 def updateRecord(request, pk):
 
-    pass
-
     record = Record.objects.get(id=pk)
 
     form = UpdateRecordForm(instance=record)
@@ -89,4 +87,52 @@ def deleteRecord(request, pk):
 
     record.delete()
 
-    return redirect("dashboard")
+    return redirect("")
+
+
+def ceTable(request):
+
+    community_engagements = CommunityEngagement.objects.all()
+    return render(request, 'webapp/ceTable.html', {'community_engagements': community_engagements})
+
+
+
+# - CommunityEngagement Create
+def createCERecord(request):
+    if request.method == "POST":
+        form2 = CreateCommunityEngagementForm(request.POST)
+        if form2.is_valid():
+            form2.save()
+            return redirect("")
+    else:
+        form2 = CreateCommunityEngagementForm()
+    
+    context = {'form2': form2}
+    return render(request, 'webapp/createCE.html', context=context)
+
+# - Update a record 
+def updateCERecord(request, pk):
+    record2 = CommunityEngagement.objects.get(pk)
+
+    if request.method == 'POST':
+        form2 = UpdateCommunityEngagementForm(request.POST, instance=record2)
+        if form2.is_valid():
+            form2.save()
+            return redirect("")
+    else:
+        form2 = UpdateCommunityEngagementForm(instance=record2)
+
+    context = {'form2': form2}
+    return render(request, 'webapp/updateCE.html', context=context)
+
+# - Read / View a singular record
+# def viewRecord(request, pk):
+#     record2 = CommunityEngagement.objects.get(id=pk)
+#     context = {'record2': record2}
+#     return render(request, 'webapp/viewCE.html', context=context)
+
+# - Delete a record
+def deleteCERecord(request, pk):
+    record2 = CommunityEngagement.objects.get(pk)
+    record2.delete()
+    return redirect("")

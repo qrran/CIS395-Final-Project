@@ -26,3 +26,12 @@ class Record(models.Model):
     def __str__(self):
 
         return self.first_name + "   " + self.last_name
+class CommunityEngagement(models.Model):
+    student = models.ForeignKey(Record, on_delete=models.CASCADE, related_name='id2')
+    participation = models.BooleanField(default=False)
+    organization_name = models.CharField(max_length=100)
+    activity_name = models.CharField(max_length=100)
+    role = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{str(self.student)} - {self.organization_name} {self.role}"

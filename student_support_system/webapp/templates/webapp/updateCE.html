@@ -1,33 +1,26 @@
 {% extends 'webapp/base.html' %} {% block content %}
+
 <div class="container bg-light shadow-md p-5 form-layout">
-  <h1>Create new Record</h1>
+  <h1>Create new Community Engagement Record</h1>
   <h2>Start adding in the required details for your record.</h2>
   <hr />
   <br />
   <form method="POST" autocomplete="off">
     {% csrf_token %}
     <br />
-    First Name: {{ form.first_name}}
+    Participation: {{ form2.participation }}
     <br />
-
-    Last Name: {{ form.last_name}}
+    Organization Name: {{ form2.organization_name }}
     <br />
-
-    Student ID: {{ form.student_id}}
+    Activity Name: {{ form2.activity_name }}
     <br />
-    Student Email: {{ form.student_email}}
-    <br />
-    Phone Number: {{ form.phone_number}}
-    <br />
-    Major: {{ form.major}}
-    <br />
-    GPA: {{ form.gpa}}
+    Role: {{ form2.role }}
     <br />
     <button type="submit" class="btn btn-primary">
       Create Record &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
     </button>
     &nbsp;
-    <a href="{% url 'dashboard' %}" class="btn btn-secondary">
+    <a href="{% url '' %}" class="btn btn-secondary">
       Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </a>
   </form>

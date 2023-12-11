@@ -6,15 +6,11 @@
   <div class="text-center">
     <h1>Student Support System</h1>
   </div>
-  This is home page
-  <a href="{% url 'dashboard' %}">dashboard</a>
-  <!-- <p style="text-align: left">
-    <a href="../backend/displayItem.js">Display Clients</a> <br /><br />
-  </p>
-  <a href="./insertItem.html">Insert Client</a> <br /><br />
-  <a href="./updateItem.html">Update Client</a> <br /><br />
-  <a href="./deleteItem.html">Delete Client</a> <br /><br /> -->
-
-  <!-- <a class="btn btn-primary" type="button" href="">Insert Client</a> -->
+  <div class="text-center">
+    <a href="{% url 'dashboard' %}">Student Information</a>
+    <br />
+    <a href="{% url 'ceTable' %}">Community Engagement</a>
+  </div>
 </body>
+
 {% endblock %}
