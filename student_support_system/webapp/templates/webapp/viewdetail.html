@@ -1,21 +1,39 @@
 {% extends 'webapp/base.html' %} {% block content %}
-<div>
-  {% if community_engagements %} {% for record2 in community_engagements %}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
-  <br />
-  Student: {{ record2.student }}
-  <br />
-  Current Experience: {{ record2.participation }}
-  <br />
-  Organization Name: {{ record2.organization_name }}
-  <br />
-  Activity Name: {{ record2.activity_name }}
-  <br />
-  Role: {{ record2.role }}
-  <br />
-  {% endfor %} {% endif %} &nbsp;
-  <a href="{% url 'ceTable' %}" class="btn btn-secondary">
-    Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
-  </a>
+<div class="container text-center">
+  <div class="card carddiv">
+    <div class="card-body">
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
+
+      <br />
+      <strong>Student:</strong> Student1
+      <br />
+      <strong>Current Experience:</strong> Yes
+      <br />
+      <strong>Organization Name:</strong> Borough of Manhatttan Community
+      College
+      <br />
+      <strong>Activity Name:</strong> 2023 Fall Regular Course
+      <br />
+      <strong>Role:</strong> Teaching Assistant
+      <br />
+      &nbsp;
+    </div>
+
+    <br />
+
+    <a href="{% url 'ceTable' %}" class="btn btn-secondary">
+      Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </a>
+  </div>
 </div>
 {% endblock %}

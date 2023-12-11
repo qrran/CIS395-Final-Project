@@ -1,3 +1,14 @@
+.simple-linear {
+  background: linear-gradient(blue, pink);
+}
+
 h1 {
-  color: pink;
+  color: white;
+}
+.carddiv {
+  background: #000;
+}
+footer {
+  background-color: gray;
+  color: azure;
 }

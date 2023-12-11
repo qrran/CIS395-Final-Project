@@ -1,16 +1,54 @@
 {% extends 'webapp/base.html' %} {% block content %}
 <body>
-  <br />
-  <br />
-
-  <div class="text-center">
-    <h1>Student Support System</h1>
-  </div>
-  <div class="text-center">
-    <a href="{% url 'dashboard' %}">Student Information</a>
+  <div class="simple-linear">
     <br />
-    <a href="{% url 'ceTable' %}">Community Engagement</a>
+    <br />
+    <div class="text-center">
+      <h1 text-color="white">Student Support System</h1>
+      <hr />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+    <div class="text-center">
+      <a href="{% url 'dashboard' %}" class="btn btn-info" class=""
+        >Student Information</a
+      >
+      <br />
+      <br />
+      <br />
+
+      <a href="{% url 'ceTable' %}" class="btn btn-info"
+        >Community Engagement</a
+      >
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
   </div>
 </body>
+<footer class="text-center">
+  COPYRIGHT ©
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+</footer>
 
 {% endblock %}
