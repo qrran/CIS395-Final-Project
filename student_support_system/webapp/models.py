@@ -22,7 +22,7 @@ class Record(models.Model):
     
     def __str__(self):
 
-        return self.first_name + "   " + self.last_name
+        return str(self.student_id)
 class CommunityEngagement(models.Model):
     student = models.ForeignKey(Record, on_delete=models.CASCADE, related_name='id2')
     participation = models.BooleanField(default=False)

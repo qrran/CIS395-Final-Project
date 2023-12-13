@@ -1,8 +1,9 @@
 {% extends 'webapp/base.html' %} {% block content %}
 <body>
-  <div class="simple-linear">
+  <div>
     <br />
     <br />
+
     <div class="text-center">
       <h1 text-color="white">Student Support System</h1>
       <hr />
@@ -16,14 +17,14 @@
       <br />
     </div>
     <div class="text-center">
-      <a href="{% url 'dashboard' %}" class="btn btn-info" class=""
+      <a href="{% url 'dashboard' %}" class="btn btn-outline-primary" class=""
         >Student Information</a
       >
       <br />
       <br />
       <br />
 
-      <a href="{% url 'ceTable' %}" class="btn btn-info"
+      <a href="{% url 'ceTable' %}" class="btn btn-outline-primary"
         >Community Engagement</a
       >
       <br />
