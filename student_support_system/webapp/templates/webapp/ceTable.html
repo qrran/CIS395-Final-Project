@@ -1,40 +1,45 @@
-{% extends 'webapp/base.html' %} {% block content %}
-<h1 class="text-center">Community Engagements</h1>
-<hr />
-<table class="table table-gray table-hover table-bordered">
-  <thead class="table-primary">
-    <tr>
-      <!-- <th scope="col">Enrollment ID</th> -->
-      <th scope="col">Student</th>
-      <th scope="col">Current Experience</th>
-      <th scope="col">Organization Name</th>
-      <th scope="col">Activity Name</th>
-      <th scope="col">Role</th>
-      <th scope="col">View</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% if community_engagements %} {% for record2 in community_engagements %}
-    <tr>
-      <!-- <td>{{ record2.enrollment_id }}</td> -->
-      <td>{{ record2.student }}</td>
-      <td>{{ record2.participation }}</td>
-      <td>{{ record2.organization_name }}</td>
-      <td>{{ record2.activity_name }}</td>
-      <td>{{ record2.role }}</td>
-      <td><a href="{% url 'viewdetail' %}">view details</a></td>
-    </tr>
-    {% endfor %} {% endif %}
-  </tbody>
-</table>
+{% extends 'webapp/base.html' %} {% block content %}{% load static %}
+<link rel="stylesheet" type="text/css" href="../../../static/css/table.css" />
 
-<a class="btn btn-outline-primary" href="{% url 'createCE' %}">
-  New Community Engagement
-</a>
-<a class="btn btn-outline-primary" href="{% url 'createCE' %}">
-  Update Community Engagement
-</a>
-<a class="btn btn-outline-primary" href="{% url 'deleteCE' %}">
-  Delete Community Engagement
-</a>
+<br />
+<h1 class="text-center">Community Engagement</h1>
+<hr />
+<div class="tablediv">
+  <table class="table table-gray table-hover table-bordered">
+    <thead class="table-primary">
+      <tr>
+        <!-- <th scope="col">Enrollment ID</th> -->
+        <th scope="col">Student</th>
+        <th scope="col">Current Experience</th>
+        <th scope="col">Organization Name</th>
+        <th scope="col">Activity Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">View</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if community_engagements %} {% for record2 in community_engagements %}
+      <tr>
+        <!-- <td>{{ record2.enrollment_id }}</td> -->
+        <td>{{ record2.student }}</td>
+        <td>{{ record2.participation }}</td>
+        <td>{{ record2.organization_name }}</td>
+        <td>{{ record2.activity_name }}</td>
+        <td>{{ record2.role }}</td>
+        <td><a href="{% url 'viewdetail' %}">view details</a></td>
+      </tr>
+      {% endfor %} {% endif %}
+    </tbody>
+  </table>
+  <br />
+  <a class="btn btn-outline-primary" href="{% url 'createCE' %}">
+    New Community Engagement
+  </a>
+  <a class="btn btn-outline-primary" href="{% url 'createCE' %}">
+    Update Community Engagement
+  </a>
+  <a class="btn btn-outline-primary" href="{% url 'deleteCE' %}">
+    Delete Community Engagement
+  </a>
+</div>
 {% endblock %}

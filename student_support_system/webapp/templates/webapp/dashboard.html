@@ -1,42 +1,65 @@
-{% extends 'webapp/base.html' %} {% block content %}
-
-<h1 class="text-center">Student Information</h1>
-
-<table class="table table-gray table-hover table-bordered">
-  <thead class="table-primary">
-    <tr>
-      <!-- <th scope="col">Primary Key</th> -->
-      <th scope="col">Student ID</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <!-- <th scope="col">Student ID</th> -->
-      <th scope="col">Student Email</th>
-      <th scope="col">Phone Number</th>
-      <th scope="col">Major</th>
-      <th scope="col">GPA</th>
-
-      <th scope="col">View</th>
-    </tr>
-  </thead>
+{% extends 'webapp/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" type="text/css" href="../../../static/css/table.css" />
+<div class="tablebg">
+  <br />
+  <h1 class="text-center">Student Information</h1>
   <hr />
-  <tbody>
-    {% if records %} {% for record in records %}
-    <tr>
-      <td>{{record.student_id}}</td>
-      <td>{{record.first_name}}</td>
-      <td>{{record.last_name}}</td>
-      <!-- <td>{{record.student_id}}</td> -->
-      <td>{{record.student_email}}</td>
-      <td>{{record.phone_number}}</td>
-      <td>{{record.major}}</td>
-      <td>{{record.gpa}}</td>
+  <div class="tablediv">
+    <table
+      class="table table-gray table-hover table-bordered custom-table-bordered"
+    >
+      <thead class="table-primary">
+        <tr>
+          <!-- <th scope="col">Primary Key</th> -->
+          <th scope="col">Student ID</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <!-- <th scope="col">Student ID</th> -->
+          <th scope="col">Student Email</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Major</th>
+          <th scope="col">GPA</th>
 
-      <td><a href="{% url 'viewRecord' record.id %}">view details</a></td>
-    </tr>
-    {% endfor %} {% endif %}
-  </tbody>
-</table>
-<a class="btn btn-outline-primary" href="{% url 'createRecord' %}">
-  Create a new record
-</a>
+          <th scope="col">View</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if records %} {% for record in records %}
+        <tr>
+          <td>{{record.student_id}}</td>
+          <td>{{record.first_name}}</td>
+          <td>{{record.last_name}}</td>
+          <!-- <td>{{record.student_id}}</td> -->
+          <td>{{record.student_email}}</td>
+          <td>{{record.phone_number}}</td>
+          <td>{{record.major}}</td>
+          <td>{{record.gpa}}</td>
+
+          <td>
+            <a href="{% url 'viewRecord' record.id %}">view details</a>
+          </td>
+        </tr>
+        {% endfor %} {% endif %}
+      </tbody>
+    </table>
+
+    <br />
+    <a class="btn btn-outline-primary" href="{% url 'createRecord' %}">
+      Create a new record
+    </a>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+</div>
 {% endblock %}
