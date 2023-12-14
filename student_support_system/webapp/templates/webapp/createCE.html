@@ -1,31 +1,30 @@
 {% extends 'webapp/base.html' %} {% block content %}
 <div class="container bg-light shadow-md p-5 form-layout">
-  <h2>Create new Community Engagement Record</h2>
+  <h1>Create New Community Engagement</h1>
   <hr />
   <br />
-  <form>
-    <div class="wrapper">
-      <div id="form-line">
-        <input type="email" placheolder="email" />
-      </div>
-      <div id="form-line">
-        <input type="password" placheolder="email" />
-      </div>
-      <div id="form-line">
-        <input type="submit" value="Login" />
-      </div>
-    </div>
-  </form>
   <form method="POST" autocomplete="off">
-    {% csrf_token %}
+    {% csrf_token %}Student ID: &nbsp;
+    <select class="custom-select">
+      <option selected></option>
+      <option value="1">11111111</option>
+      <option value="2">22222222</option>
+      <option value="3">33333333</option>
+    </select>
     <br />
-    Current Experienc {{ form2.participation }}
+    <br />
+    Current Experience: &nbsp &nbsp {{ form2.participation }}
+    <br />
     <br />
     Organization Name: {{ form2.organization_name }}
     <br />
+    <br />
     Activity Name: {{ form2.activity_name }}
+
+    <br />
     <br />
     Role: {{ form2.role }}
+    <br />
     <br />
     <button type="submit" class="btn btn-primary">
       Submit Change &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
@@ -36,4 +35,5 @@
     </a>
   </form>
 </div>
+
 {% endblock %}

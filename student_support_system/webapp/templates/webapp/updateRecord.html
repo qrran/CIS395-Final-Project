@@ -4,27 +4,29 @@
   <div class="container bg-light shadow-md p-5 form-layout">
     <h3>Update record</h3>
 
-    <h6>Update your record down here.</h6>
-
     <hr />
-    <br />
 
     <form method="POST" autocomplete="off">
-      {% csrf_token %}
+      {% csrf_token %} Student ID: {{ form.student_id}}
       <br />
-      Student ID: {{ form.student_id}}
       <br />
       First Name: {{ form.first_name}}
       <br />
+      <br />
       Last Name: {{ form.last_name}}
+      <br />
       <br />
       Student Email: {{ form.student_email}}
       <br />
+      <br />
       Phone Number: {{ form.phone_number}}
+      <br />
       <br />
       Major: {{ form.major}}
       <br />
+      <br />
       GPA: {{ form.gpa}}
+      <br />
       <br />
       <hr />
       <button type="submit" class="btn btn-primary">

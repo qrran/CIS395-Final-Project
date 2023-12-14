@@ -87,7 +87,7 @@ def deleteRecord(request, pk):
 
     record.delete()
 
-    return redirect("")
+    return redirect("dashboard")
 
 
 def ceTable(request):

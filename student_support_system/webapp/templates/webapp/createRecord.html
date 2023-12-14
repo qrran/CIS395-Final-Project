@@ -1,26 +1,31 @@
 {% extends 'webapp/base.html' %} {% block content %}
+<!-- {% load static %}
+<link rel="stylesheet" type="text/css" href="../../../static/css/form.css" /> -->
 <div class="container bg-light shadow-md p-5 form-layout">
-  <h1>Create new Record</h1>
+  <h1>Create New Record</h1>
   <hr />
   <br />
   <form method="POST" autocomplete="off">
-    {% csrf_token %}
+    {% csrf_token %} First Name: {{ form.first_name}}
     <br />
-    First Name: {{ form.first_name}}
     <br />
-
     Last Name: {{ form.last_name}}
     <br />
-
+    <br />
     Student ID: {{ form.student_id}}
+    <br />
     <br />
     Student Email: {{ form.student_email}}
     <br />
+    <br />
     Phone Number: {{ form.phone_number}}
+    <br />
     <br />
     Major: {{ form.major}}
     <br />
+    <br />
     GPA: {{ form.gpa}}
+    <br />
     <br />
     <button type="submit" class="btn btn-primary">
       Create Record &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
